@@ -1,0 +1,14 @@
+body {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(100px, auto); }
+
+.col-1 {
+  grid-column: 1/12;
+  grid-row: 1;
+  background-color: #57e19a; }
+
+h1 {
+  color: blue; }
+
+/*# sourceMappingURL=styletest.css.map */

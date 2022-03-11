@@ -1,0 +1,36 @@
+@import "var";
+a{
+    text-decoration: none;
+    color:rgb(59, 59, 59);
+}
+li{
+    list-style-type: none;  
+}
+.navbar{
+    position:relative;
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem;
+    background-color: rgb(255, 206, 115);
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.navbar-expand-md {
+    // flex-flow: row nowrap;
+    // justify-content: flex-start;
+    // display: none;
+    width: 100%;
+    display: inline-block;
+    flex-wrap: nowrap;
+};            
+    
+@media screen and(min-width: 768px){
+    .navbar{
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+    .navbar-expand-md{
+        display: flex;
+    }
+};

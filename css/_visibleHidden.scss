@@ -1,0 +1,25 @@
+@import "var";
+
+@for $i from 1 through 5{
+    @media screen and(min-width: nth($breakpoints, $i)){
+       
+        @each $value in nth($contName,$i){
+         
+            .hidden#{$value} {
+                display: none;
+            };
+            .visible#{$value}{
+                background-color: purple;
+                display: unset !important;                 
+            };
+        }
+    };
+};
+    @media print {
+        .hidden-print{
+            display: none;
+        };
+        .visible-print{
+            display: unset !important;                 
+        };
+    };

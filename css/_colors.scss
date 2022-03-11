@@ -1,0 +1,49 @@
+$colors:(
+    'muted':     grey,
+    'primary':   blue,
+    'succes':    green,
+    'info':      lightblue,
+    'warning':   orange,
+    'error':     red,
+);
+
+@each $name, $color in $colors{
+    .bg-#{$name}{
+        background-color: #{$color};
+    } 
+}
+@each $name, $color in $colors{
+    .text-#{$name}{
+        color: #{$color};
+    } 
+}
+
+@each $name, $color in $colors{
+    .btn-#{$name}{
+        background-color: #{$color};
+        color: white;
+
+        &:active{
+            background-color: darken($color, 12%);
+        color:  lighten($color, 12%);
+        scale: 0.9;
+        }
+        &:disabled{
+            background-color: grey;
+            cursor: not-allowed;
+            color: lightgrey;
+            scale: 1;
+        }
+    }
+}
+
+@each $name, $color in $colors{
+    .alert-#{$name}{
+        background-color: lighten($color, 35%);
+        color:  darken($color, 12%);
+        padding: 6px 9px;
+        border: 0.5px solid $color;
+        border-radius: 4px;
+        width: fit-content;       
+    } 
+}

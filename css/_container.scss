@@ -1,0 +1,82 @@
+@import "var";
+
+$containers:(
+    '':(
+        540px,
+        720px,
+        960px,
+        1140px,
+        1320px,
+    ),
+    '-sm':(
+        540px,
+        720px,
+        960px,
+        1140px,
+        1320px,
+    ),
+    '-md':(
+        100%,
+        720px,
+        960px,
+        1140px,
+        1320px,
+    ),
+    '-lg':(
+        100%,
+        100%,
+        960px,
+        1140px,
+        1320px,
+    ),
+    '-xl':(
+        100%,
+        100%,
+        100%,
+        1140px,
+        1320px,
+    ),
+    '-xxl':(
+        100%,
+        100%,
+        100%,
+        100%,
+        1320px,
+    ),
+);
+
+.container-fluid{
+    width: 100%;
+    background-color: lightgray;
+    border: 1px solid darkgrey;
+}
+
+@for $i from 1 through 5{
+    @media screen and(min-width: nth($breakpoints, $i)){
+       
+        @each $container, $value in $containers{
+            .container#{$container} {
+                max-width: nth($value, $i );
+                margin:auto;
+                background-color: lightgray;
+                border: 1px solid darkgrey;
+            } 
+        };    
+    };   
+};
+
+@for $i from 1 through 12{
+    .col-#{$i}{
+        grid-column: span $i;
+        background-color: lightgray;
+        border: 1px solid darkgrey;
+    }
+};
+
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    width: 100%;
+}
+

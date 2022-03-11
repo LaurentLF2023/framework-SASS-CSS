@@ -1,0 +1,28 @@
+$imgStyle:(
+    'rounded': (border-radius: 20%,),
+    'circle' : (
+        width: 200px,
+        height: 200px,
+        border-radius: 50%,
+        background-size: cover,
+        overflow: hidden,
+        background-position: center),
+    'thumbail': (
+        border: 3px solid #ccc,
+        background: #eee,
+        margin: auto,
+        padding: 15px 25px,
+    ),
+    'responsive' :( 
+        width:  20%,
+    ),
+    'blur': (filter: blur(4px)),   
+);
+
+@each $classe, $attributes in $imgStyle{
+    .img-#{$classe} {
+      @each $attributes, $values in $attributes{
+        #{$attributes}: #{$values},
+      }
+    } 
+};
